@@ -131,9 +131,9 @@
 }
 
 .card.kyogre {
-  --color1: var(--kyogre1);
-  --color2: var(--kyogre2);
-  --front: url(Kyogre.png);
+    --color1: var(--kyogre1);
+    --color2: var(--kyogre2);
+    --front: url(Kyogre.png);
 }
 
 .card.groudon {
