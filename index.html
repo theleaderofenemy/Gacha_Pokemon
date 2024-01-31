@@ -1,0 +1,877 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Dhika & Nofa Wedding</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap"rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+          crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
+    <main>
+      <h4 style="font-family: 'Rock Salt', cursive; font-size: 25px;">Selamat Datang di </h4>
+      
+      <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+        h2{
+          font-family: 'Rock Salt', cursive;
+        }
+        p{
+          font-family: 'Nothing You Could Do', cursive;
+          font-size: 20px;
+          font-weight: bold;
+        }
+      </style>
+      <h2 style="font-size: 50px;">Gacha Card Pokemon</h2><br>
+      <p style=" font-size: 25px;">Silahkan Klik Tombol dibawah ini untuk memulai</p>
+      <div class="simply-countdown"></div>
+      <a href="#home" class="btn btn-lg mt-4" onClick="enableScroll()">
+        <svg height="24" width="24" fill="#FFFFFF" viewBox="0 0 24 24" data-name="Layer 1" id="Layer_1" class="sparkle">
+          <path d="M10,21.236,6.755,14.745.264,11.5,6.755,8.255,10,1.764l3.245,6.491L19.736,11.5l-6.491,3.245ZM18,21l1.5,3L21,21l3-1.5L21,18l-1.5-3L18,18l-3,1.5ZM19.333,4.667,20.5,7l1.167-2.333L24,3.5,21.667,2.333,20.5,0,19.333,2.333,17,3.5Z"></path>
+        </svg>
+        <span class="text">GOOOO !!!</span>
+      </a>
+    </main>
+  </section>
+  <nav class="navbar navbar-expand-md bg-transparent sticky-top mynavbar">
+    <div class="container">
+      <a class="navbar-brand" href="#" style="font-family: 'Rock Salt', cursive;font-size: 17px;">Gacha Card Pokemon</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+        aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Dino</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#home">Beranda</a>
+            <a class="nav-link" href="#info">Gacha</a>
+            <a class="nav-link" href="#story">Patner</a>
+            <a class="nav-link" href="#gallery">Koleksi</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="home">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+          <h2 style="font-family: 'Rock Salt', cursive;;font-size: 40px;">Website Gacha Card Pokemon</h2><br>
+          <p>Selamat Datang di Website ini, disini kamu bisa menggacha sebuah Card dan kamu bisa menyimpan Card Pokemon ini dengan cara mendownloadnya</p>
+          <br><p>Contoh Card yang Saya miliki :</p>
+          <section class="cards">
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <div class="card charizard animated"></div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <script>
+      /*
+      
+        using 
+          - an animated gif of sparkles.
+          - an animated gradient as a holo effect.
+          - color-dodge mix blend mode
+        
+      */
+      var x;
+      var $cards = $(".card");
+      var $style = $(".hover");
+      
+      $cards
+        .on("mousemove touchmove", function (e) {
+          // normalise touch/mouse
+          var pos = [e.offsetX, e.offsetY];
+          e.preventDefault();
+          if (e.type === "touchmove") {
+            pos = [e.touches[0].clientX, e.touches[0].clientY];
+          }
+          var $card = $(this);
+          // math for mouse position
+          var l = pos[0];
+          var t = pos[1];
+          var h = $card.height();
+          var w = $card.width();
+          var px = Math.abs(Math.floor((100 / w) * l) - 100);
+          var py = Math.abs(Math.floor((100 / h) * t) - 100);
+          var pa = 50 - px + (50 - py);
+          // math for gradient / background positions
+          var lp = 50 + (px - 50) / 1.5;
+          var tp = 50 + (py - 50) / 1.5;
+          var px_spark = 50 + (px - 50) / 7;
+          var py_spark = 50 + (py - 50) / 7;
+          var p_opc = 20 + Math.abs(pa) * 1.5;
+          var ty = ((tp - 50) / 2) * -1;
+          var tx = ((lp - 50) / 1.5) * 0.5;
+          // css to apply for active card
+          var grad_pos = `background-position: ${lp}% ${tp}%;`;
+          var sprk_pos = `background-position: ${px_spark}% ${py_spark}%;`;
+          var opc = `opacity: ${p_opc / 100};`;
+          var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`;
+          // need to use a <style> tag for psuedo elements
+          var style = `
+            .card:hover:before { ${grad_pos} }  /* gradient */
+            .card:hover:after { ${sprk_pos} ${opc} }   /* sparkles */ 
+          `;
+          // set / apply css class and style
+          $cards.removeClass("active");
+          $card.removeClass("animated");
+          $card.attr("style", tf);
+          $style.html(style);
+          if (e.type === "touchmove") {
+            return false;
+          }
+          clearTimeout(x);
+        })
+        .on("mouseout touchend touchcancel", function () {
+          // remove css, apply custom animation on end
+          var $card = $(this);
+          $style.html("");
+          $card.removeAttr("style");
+          x = setTimeout(function () {
+            $card.addClass("animated");
+          }, 2500);
+        });</script>
+  </section>
+
+  <section id="info" class="info">
+    
+    <style>
+      .flip-card {
+        background-color: transparent;
+        width: 20%;
+        height: 27.5vw; /* Keep this as a fallback for non-responsive height */
+        perspective: 1000px;
+        cursor: pointer; /* Add cursor style to indicate it's clickable */
+        margin: 10px;
+        border-radius: 15px; /* Adjust the radius as needed for rounded corners */
+        overflow: hidden; /* Ensure the rounded corners are visible */
+      }
+  
+      .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      }
+  
+      .flipped .flip-card-inner {
+        transform: rotateY(180deg);
+      }
+  
+      .flip-card-front,
+      .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+        border-radius: 10px; /* Match the radius of the parent for rounded corners */
+      }
+  
+      .flip-card-front {
+        background-color: #bbb;
+        color: black;
+      }
+  
+      .flip-card-back {
+        background-color: #2980b9;
+        color: white;
+        transform: rotateY(180deg);
+      }
+  
+      .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+
+    .flip-card {
+      /* Adjust the width as needed */
+      width: 20%;
+      /* Adjust other styles as needed */
+      margin: 10px;
+    }
+
+    /* Responsive Styles */
+    @media screen and (max-width: 768px) {
+      .flip-card {
+        width: 40%; /* Adjust as needed for smaller screens */
+      }
+    }
+    .congratulations-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8); /* Warna latar belakang dengan transparansi */
+    padding: 20px;
+    border-radius: 10px;
+    z-index: 999; /* Pastikan tampil di atas elemen lain */
+  }
+
+  .congratulations-message p {
+    color: white;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .download-button {
+    background-color: #4CAF50; /* Green background color */
+    border: none; /* Remove border */
+    color: white; /* White text color */
+    padding: 10px 20px; /* Add padding */
+    text-align: center; /* Center text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it an inline-block element */
+    font-size: 16px; /* Set font size */
+    margin: 4px 2px; /* Add margin */
+    cursor: pointer; /* Add cursor pointer on hover */
+    border-radius: 5px; /* Add rounded corners */
+  }
+  .download-button:hover {
+    background-color: #45a049;}
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 50px;
+    color: white;
+    cursor: pointer;
+  }
+  .card.charizard {
+    /* Gaya untuk kartu Charizard */
+    background-color: #ffce00; /* Sesuaikan dengan warna latar belakang yang diinginkan */
+    width: 250px; /* Sesuaikan ukuran lebar */
+    height: 350px; /* Sesuaikan ukuran tinggi */
+    /* Tambahkan gaya lain yang diinginkan */
+  }
+  </style>
+      <div class="container" style="color: white;">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-10 text-center">
+            <h2 style="font-family: 'Rock Salt', cursive; font-size: 40px; color: white;">Gacha Card Pokemon</h2><br>
+            <p>Silahkan Pilih Card Pokemon ini</p>
+          </div>
+        </div>
+        
+        <div class="card-container">
+          <div class="flip-card" onclick="flipCard(this)" data-card-name="charizard">
+            <!--charizard-gx-->
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg" style="width: 100%; height: 100%;">
+              </div>
+              <div class="flip-card-back">
+                <img src="https://assets.codepen.io/13471/charizard-gx.webp" style="width: 100%; height: 100%;">
+              </div>
+            </div>
+          </div>
+          
+          <div class="flip-card" onclick="flipCard(this)" data-card-name="charizard">
+            <!--pikachu-gx-->
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg" style="width: 100%; height: 100%;">
+              </div>
+              <div class="flip-card-back">
+                <img src="https://assets.codepen.io/13471/pikachu-gx.webp" style="width: 100%; height: 100%;">
+              </div>
+            </div>
+          </div>
+          
+          <div class="flip-card" onclick="flipCard(this)" data-card-name="charizard">
+            <!--eevee-gx-->
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg" style="width: 100%; height: 100%;">
+              </div>
+              <div class="flip-card-back">
+                <img src="https://assets.codepen.io/13471/eevee-gx.webp" style="width: 100%; height: 100%;">
+              </div>
+            </div>
+          </div>
+          
+          <div class="flip-card" onclick="flipCard(this)" data-card-name="charizard">
+            <!--mewtwo-gx-->
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <img src="https://cdn2.bulbagarden.net/upload/1/17/Cardback.jpg" style="width: 100%; height: 100%;">
+              </div>
+              <div class="flip-card-back">
+                <img src="https://assets.codepen.io/13471/mewtwo-gx.webp" style="width: 100%; height: 100%;">
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+           let flippedCard = null;
+           var x;
+var $cards = $(".card");
+var $style = $(".hover");
+
+$cards
+  .on("mousemove touchmove", function (e) {
+    // normalise touch/mouse
+    var pos = [e.offsetX, e.offsetY];
+    e.preventDefault();
+    if (e.type === "touchmove") {
+      pos = [e.touches[0].clientX, e.touches[0].clientY];
+    }
+    var $card = $(this);
+    // math for mouse position
+    var l = pos[0];
+    var t = pos[1];
+    var h = $card.height();
+    var w = $card.width();
+    var px = Math.abs(Math.floor((100 / w) * l) - 100);
+    var py = Math.abs(Math.floor((100 / h) * t) - 100);
+    var pa = 50 - px + (50 - py);
+    // math for gradient / background positions
+    var lp = 50 + (px - 50) / 1.5;
+    var tp = 50 + (py - 50) / 1.5;
+    var px_spark = 50 + (px - 50) / 7;
+    var py_spark = 50 + (py - 50) / 7;
+    var p_opc = 20 + Math.abs(pa) * 1.5;
+    var ty = ((tp - 50) / 2) * -1;
+    var tx = ((lp - 50) / 1.5) * 0.5;
+    // css to apply for active card
+    var grad_pos = `background-position: ${lp}% ${tp}%;`;
+    var sprk_pos = `background-position: ${px_spark}% ${py_spark}%;`;
+    var opc = `opacity: ${p_opc / 100};`;
+    var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`;
+    // need to use a <style> tag for psuedo elements
+    var style = `
+      .card:hover:before { ${grad_pos} }  /* gradient */
+      .card:hover:after { ${sprk_pos} ${opc} }   /* sparkles */ 
+    `;
+    // set / apply css class and style
+    $cards.removeClass("active");
+    $card.removeClass("animated");
+    $card.attr("style", tf);
+    $style.html(style);
+    if (e.type === "touchmove") {
+      return false;
+    }
+    clearTimeout(x);
+  })
+  .on("mouseout touchend touchcancel", function () {
+    // remove css, apply custom animation on end
+    var $card = $(this);
+    $style.html("");
+    $card.removeAttr("style");
+    x = setTimeout(function () {
+      $card.addClass("animated");
+    }, 2500);
+  });
+function flipCard(card) {
+    if (!flippedCard) {
+        card.classList.add('flipped');
+        flippedCard = card;
+        card.style.pointerEvents = 'none'; // Disable click event after flipping
+
+        // Menampilkan pesan "Selamat Anda mendapatkan kartu ini"
+        showCongratulationsMessage(card);
+    }
+}
+        
+          function showCongratulationsMessage(card) {
+    const messageDiv = document.createElement('div');
+    messageDiv.classList.add('congratulations-message');
+
+    const closeButton = document.createElement('span');
+    closeButton.innerHTML = '&times;';
+    closeButton.classList.add('close-button');
+    closeButton.addEventListener('click', () => {
+      messageDiv.remove();
+    });
+    messageDiv.appendChild(closeButton);
+
+    // Get the card name from its class
+    const cardName = card.classList[1]; // Assumes only one additional class is present
+
+    const animatedCard = document.createElement('div');
+    animatedCard.classList.add('card', cardName, 'animated');
+
+    // Create a new image element for the back image
+    const backImage = document.createElement('img');
+    backImage.src = card.querySelector('.flip-card-back img').src;
+    backImage.style.width = '100%';
+    backImage.style.height = '100%';
+    animatedCard.appendChild(backImage);
+
+    messageDiv.appendChild(animatedCard);
+
+    const congratulationsMessage = document.createElement('p');
+    congratulationsMessage.innerText = 'Klik Tombol ini jika ingin\n Card Pokemon Anda';
+    congratulationsMessage.classList.add('congratulations-text');
+    messageDiv.appendChild(congratulationsMessage);
+
+    const downloadButton = document.createElement('button');
+    downloadButton.innerText = 'Download';
+    downloadButton.classList.add('download-button');
+    downloadButton.addEventListener('click', () => {
+      downloadCardImage(card);
+    });
+    messageDiv.appendChild(downloadButton);
+
+    document.body.appendChild(messageDiv);
+  }
+  function downloadCardImage(card) {
+  // Get the card name from the data attribute
+  const cardName = card.dataset.cardName;
+
+  // Create a temporary anchor element
+  const anchor = document.createElement('a');
+
+  // Get the back image source
+  const backImageSrc = card.querySelector('.flip-card-back img').src;
+
+  // Convert the image to a Blob
+  fetch(backImageSrc)
+    .then(response => response.blob())
+    .then(blob => {
+      // Create a blob URL for the Blob
+      const blobUrl = URL.createObjectURL(blob);
+
+      // Set the blob URL as the anchor's href
+      anchor.href = blobUrl;
+
+      // Set the desired file name as "Card Your.png"
+      anchor.download = `Card Your.png`;
+
+      // Simulate a click to trigger the download
+      anchor.click();
+
+      // Remove the temporary anchor element
+      anchor.remove();
+
+      // Revoke the Blob URL to free up resources
+      URL.revokeObjectURL(blobUrl);
+    });
+}
+
+
+          // Fungsi untuk mengacak posisi kartu
+function shuffleCards() {
+    const cardContainer = document.querySelector('.card-container');
+    const cards = Array.from(cardContainer.getElementsByClassName('flip-card'));
+
+    // Reset flippedCard setelah pengacakan
+    flippedCard = null;
+
+    cards.forEach(card => {
+        // Reset ke posisi awal
+        card.classList.remove('flipped');
+        card.style.pointerEvents = 'auto';
+
+        // Hapus event listener sebelum menambahkan yang baru
+        card.removeEventListener('click', cardClickHandler);
+
+        // Tambahkan event listener baru
+        card.addEventListener('click', cardClickHandler);
+    });
+
+    // Acak urutan kartu
+    for (let i = cards.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [cards[i].innerHTML, cards[j].innerHTML] = [cards[j].innerHTML, cards[i].innerHTML];
+    }
+}
+
+// Event handler untuk setiap kartu
+function cardClickHandler() {
+    flipCard(this);
+}
+
+        </script>
+        <div style="display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;">
+<style>
+.btn-class-name {
+  --primary: 255, 90, 120;
+  --secondary: 150, 50, 60;
+  width: 100px;
+  height: 80px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  outline: 10px solid rgb(var(--primary), .5);
+  border-radius: 100%;
+  position: relative;
+  transition: .3s;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-class-name .back {
+  background: rgba(var(--secondary), 1); /* Updated to use rgba */
+  border-radius: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.btn-class-name .front {
+  background: linear-gradient(0deg, rgba(var(--primary), .6) 20%, rgba(var(--primary)) 50%);
+  box-shadow: 0 .5em 1em -0.2em rgba(var(--secondary), .5);
+  border-radius: 100%;
+  position: absolute;
+  border: 1px solid rgb(var(--secondary));
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: inherit;
+  transform: translateY(-15%);
+  transition: .15s;
+  color: rgb(var(--secondary));
+}
+
+.btn-class-name:active .front {
+  transform: translateY(0%);
+  box-shadow: 0 0;
+}
+.warning-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgb(var(--secondary));
+    margin-top: 10px;
+    margin-bottom: 10px; 
+  }
+</style>
+<button class="btn-class-name" onclick="shuffleCards()">
+        <span class="back"></span>
+        <span class="front"></span>
+    </button>
+    <p class="warning-text">Klik ini Untuk mengacak dan memilih kartu lagi</p>
+</div>
+</div>
+
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <h2 style="font-family: 'Rock Salt', cursive;font-size: 50px;">Patner Saya???</h2>
+          <p style="font-family: 'Nothing You Could Do', cursive;
+          font-size: 20px;
+          font-weight: bold;
+          color: #919191;"><br>Disini saya memiliki 3 Patner yaitu :</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <ul class="timeline">
+            <li>
+              <div class="timeline-image" style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/512px-ChatGPT_logo.svg.png);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Patner Pertama</h3>
+                  <span>ChatGPT 3.5</span>
+                </div>
+                <div class="timeline-body">
+                  <p>Pada Patner Pertama, Saya konsultasi kepada dia untuk menyuruhnya membuat beberapa hal yang saya tidak bisa
+                  </p>
+                </div>
+              </div>
+
+            </li>
+            <li class="timeline-inverted">
+              <div class="timeline-image" style="background-image: url(https://cdn-icons-png.flaticon.com/512/25/25231.png);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Patner Kedua</h3>
+                  <span>GitHub</span>
+                </div>
+                <div class="timeline-body">
+                  <p>kalau Patner Kedua, Saya diberikan oleh nya sebuah file yang isi nya Menurut saya itu Keren Bettt
+                  </p>
+                </div>
+              </div>
+
+            </li>
+            <li>
+              <div class="timeline-image" style="background-image: url(https://seeklogo.com/images/G/google-fonts-logo-185D843C0C-seeklogo.com.png);"></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <h3>Patner Ketiga</h3>
+                  <span>Google Fonts</span>
+                </div>
+                <div class="timeline-body">
+                  <p>dan Patner Ketiga ini, Saya menanyakan Saran Font cocok untuk Website saya
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" class="gallery bg-black" >
+    <div class="container ">
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-10 text-center">
+          <h2 style="font-family: 'Rock Salt', cursive;font-size: 50px;color: white;">Koleksi Card</h2>
+          <p style="font-family: 'Nothing You Could Do', cursive;
+          font-size: 20px;
+          font-weight: bold;
+          color: #919191;">Ini adalah beberapa Card Pokemon yang saya miliki :</p>
+        </div>
+      </div>
+
+      <div class="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1 justify-content-center ">
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+          <section class="cards">
+            <div class="row">
+              <div class="card charizard1 animated"></div>
+              <div class="card pika animated"></div>
+              <div class="card eevee animated"></div>
+            </div>
+            <div class="row">
+              <div class="card mewtwo animated"></div>
+              <div class="card delphox animated"></div>
+              <div class="card gardevoir animated"></div>
+            </div>
+            <div class="row">
+              <div class="card yveltal animated"></div>
+              <div class="card xerneas animated"></div>
+              <div class="card palkia animated"></div>
+            </div>
+            <div class="row">
+              <div class="card dialga animated"></div>
+              <div class="card greninja animated"></div>
+              <div class="card kyogre animated"></div>
+            </div>
+            <div class="row">
+              <div class="card groudon animated"></div>
+              <div class="card giratina animated"></div>
+              <div class="card rayquaza animated"></div>
+            </div>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <small class="block">&copy; 2023 TheleaderOfenemy. All Rights Reserved.Design by</small>
+          <small id="dynamicLink" class="block blink-text"> <li><i class="bi bi-instagram"> @maulana_siddiq_al_husein</i></li></small>
+          <script>
+            var smallElement = document.getElementById('dynamicLink');
+            smallElement.addEventListener('click', function() {
+                window.location.href = 'https://www.instagram.com/maulana_siddiq_al_husein/#';
+            });
+        </script>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <div id="audio-container">
+    <audio id="song" autoplay loop>
+      <source src="Y2meta.app - Pokémon Season 1_ Indigo League - Opening Theme (128 kbps).mp3" type="audio/mp3">
+    </audio>
+
+    <div class="audio-icon-wrapper" style="display: none;">
+      <i class="bi bi-disc"></i>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
+
+  <script>
+    simplyCountdown('.simply-countdown', {
+      year: 2023, // required
+      month: 11, // required
+      day: 20, // required
+      hours: 8, // Default is 0 [0-23] integer
+      words: { //words displayed into the countdown
+        days: { singular: 'hari', plural: 'hari' },
+        hours: { singular: 'jam', plural: 'jam' },
+        minutes: { singular: 'menit', plural: 'menit' },
+        seconds: { singular: 'detik', plural: 'detik' }
+      },
+    });
+  </script>
+
+  <script>
+    const stickyTop = document.querySelector('.sticky-top');
+    const offcanvas = document.querySelector('.offcanvas');
+
+    offcanvas.addEventListener('show.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'visible';
+    });
+
+    offcanvas.addEventListener('hidden.bs.offcanvas', function () {
+      stickyTop.style.overflow = 'hidden';
+    });
+
+  </script>
+
+  <script>
+   const song = document.querySelector('#song');
+  
+  // Set the volume to 0.5 (adjust as needed)
+  song.volume = 1.0;
+
+  // Other parts of your script remain unchanged
+  const rootElement = document.querySelector(":root");
+  const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+  const audioIcon = document.querySelector('.audio-icon-wrapper i');
+  let isPlaying = false;
+
+    function disableScroll() {
+      scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+      window.onscroll = function () {
+        window.scrollTo(scrollTop, scrollLeft);
+      }
+
+      rootElement.style.scrollBehavior = 'auto';
+    }
+
+    function enableScroll() {
+      window.onscroll = function () { }
+      rootElement.style.scrollBehavior = 'smooth';
+      // localStorage.setItem('opened', 'true');
+      playAudio();
+    }
+
+    function playAudio() {
+      song.volume = 1.0;
+      audioIconWrapper.style.display = 'flex';
+      song.play();
+      isPlaying = true;
+    }
+
+    audioIconWrapper.onclick = function () {
+      if (isPlaying) {
+        song.pause();
+        audioIcon.classList.remove('bi-disc');
+        audioIcon.classList.add('bi-pause-circle');
+      } else {
+        song.play();
+        audioIcon.classList.add('bi-disc');
+        audioIcon.classList.remove('bi-pause-circle');
+      }
+
+      isPlaying = !isPlaying;
+    }
+
+    // if (!localStorage.getItem('opened')) {
+    //   disableScroll();
+    // }
+    disableScroll();
+    var x;
+var $cards = $(".card");
+var $style = $(".hover");
+
+$cards
+  .on("mousemove touchmove", function (e) {
+    // normalise touch/mouse
+    var pos = [e.offsetX, e.offsetY];
+    e.preventDefault();
+    if (e.type === "touchmove") {
+      pos = [e.touches[0].clientX, e.touches[0].clientY];
+    }
+    var $card = $(this);
+    // math for mouse position
+    var l = pos[0];
+    var t = pos[1];
+    var h = $card.height();
+    var w = $card.width();
+    var px = Math.abs(Math.floor((100 / w) * l) - 100);
+    var py = Math.abs(Math.floor((100 / h) * t) - 100);
+    var pa = 50 - px + (50 - py);
+    // math for gradient / background positions
+    var lp = 50 + (px - 50) / 1.5;
+    var tp = 50 + (py - 50) / 1.5;
+    var px_spark = 50 + (px - 50) / 7;
+    var py_spark = 50 + (py - 50) / 7;
+    var p_opc = 20 + Math.abs(pa) * 1.5;
+    var ty = ((tp - 50) / 2) * -1;
+    var tx = ((lp - 50) / 1.5) * 0.5;
+    // css to apply for active card
+    var grad_pos = `background-position: ${lp}% ${tp}%;`;
+    var sprk_pos = `background-position: ${px_spark}% ${py_spark}%;`;
+    var opc = `opacity: ${p_opc / 100};`;
+    var tf = `transform: rotateX(${ty}deg) rotateY(${tx}deg)`;
+    // need to use a <style> tag for psuedo elements
+    var style = `
+      .card:hover:before { ${grad_pos} }  /* gradient */
+      .card:hover:after { ${sprk_pos} ${opc} }   /* sparkles */ 
+    `;
+    // set / apply css class and style
+    $cards.removeClass("active");
+    $card.removeClass("animated");
+    $card.attr("style", tf);
+    $style.html(style);
+    if (e.type === "touchmove") {
+      return false;
+    }
+    clearTimeout(x);
+  })
+  .on("mouseout touchend touchcancel", function () {
+    // remove css, apply custom animation on end
+    var $card = $(this);
+    $style.html("");
+    $card.removeAttr("style");
+    x = setTimeout(function () {
+      $card.addClass("animated");
+    }, 2500);
+  });
+  </script>
+  
+</body>
+
+</html>
